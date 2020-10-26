@@ -1,0 +1,30 @@
+button {
+    border-radius: 5rem;
+    background-color: rgba(221, 162, 35, 0.747);
+}
+
+.contenedor {
+    
+    border: rgb(248, 247, 247) 3px solid;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 1rem;
+    height: 50%;
+    width: 50%;
+    max-width: 310px;
+    box-shadow: 4px 4px 0px hsla(0, 5%, 29%, 0.692);
+    background-color: rgba(255, 255, 255, 0.527);
+    
+  }
+
+  .posicion {
+      
+      margin-left: 40px;
+  }
+
+  .style {
+      color: white;
+      border-color: transparent;
+  }
+
+ 
