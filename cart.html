@@ -31,6 +31,17 @@
         font-size: 3.5rem;
       }
     }
+
+    .contenedorDatos{
+
+border: rgba(221, 207, 190, 0.774) 3px solid;
+border-radius: 1rem;
+padding: 10px;
+margin-bottom: 20px;
+background-color: rgba(247, 241, 241, 0.774);
+width: 250px;
+
+    }
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -60,20 +71,27 @@
   </nav>
 
   <main role="main" class="container">
-
-    <div class=" ">
+<!------------------------------------ ROW 1 ------------------------------------------>
+    <div class="row" style="align-items: center;">
+      <div class="col-5"></div>
+      <div class="col-2">
+      <img src="carrito222.png" style="height: 160px; padding: 10px;">
+    </div>
+    <div class="col-5"></div>
+    </div> 
+    <!------------------------------ ROW 2 --------------------------------->
 
       <div class="row">
         <div class="col"></div>
 
         <div class="col">
-          <h3 style="text-align: center;">Tu carrito</h3><br>
-          <div class="container pb-5">
+        
+          <div >
             <table class="table" id="tabla">
-              <thead>
+              <thead class="thead-dark">
                 <tr>
                   <th></th>
-                  <th style="text-align: center;">Artículo</th>
+                  <th cellspacing="10" style="text-align: center;">Artículo</th>
                   <th style="text-align: center;">Costo unitario</th>
                   <th colspan="1">Cantidad</th>
                   <th style="text-align: center;">Costo</th>
@@ -92,47 +110,78 @@
         </div>
         <div class="col"></div>
       </div>
+      <!---------------------- ROW 3 --------------------->
       <div class="row">
-        
-        <h4>Tipo de envío</h4>
-        <!-- Premium (2-5 días) - Costo del 15% sobre el subtotal.
+        <div class="col-3"></div>
+        <div class="col-6">
+
+          <h4>Tipo de envío</h4>
+          <!-- Premium (2-5 días) - Costo del 15% sobre el subtotal.
            ○ Express (5-8 días) - Costo del 7% sobre el subtotal.
            ○ Standard (12 a 15 días) - Costo del 5% sobre el subtotal -->
-        <div>
+          <div>
 
-          <input id="montevideo" name="envio" type="radio" value="2" checked="" required="">
-          <label for="montevideo" title="Costo del 15% sobre el subtotal.">Premium (2-5 días)</label> <br>
+            <input id="montevideo" name="envio" type="radio" value="15" checked="" required="">
+            <label for="montevideo" title="Costo del 15% sobre el subtotal.">Premium (2-5 días)</label> <br>
 
-          <input id="sur" name="envio" type="radio" value="4" required="">
-          <label for="sur" title="Costo del 7% sobre el subtotal.">Express (5-8 días)</label> <br>
+            <input id="sur" name="envio" type="radio" value="7" required="">
+            <label for="sur" title="Costo del 7% sobre el subtotal.">Express (5-8 días)</label> <br>
 
-          <input id="norte" name="envio" type="radio" value="6" required="">
-          <label for="norte" title="Costo del 5% sobre el subtotal.">Standard (12 a 15 días) </label> <br>
+            <input id="norte" name="envio" type="radio" value="5" required="">
+            <label for="norte" title="Costo del 5% sobre el subtotal.">Standard (12 a 15 días) </label> <br><br>
 
+          </div>
         </div>
-        <br>
-        <!--     <table>
-              <thead>
+        <div class="col-3"></div>
+      </div>
+
+      <!----------------------------------- ROW 4 -------------------------------------------->
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+        <table class=" table">
+          <thead>
             <tr>
-            <th>Artículo</th>
-            <th>Costo del envío</th>
-            <th>Costo total</th>
-             </tr>
-            </thead>
-             <tbody id="totalEnvio"> </tbody>
-           </table>
-           -->
+              <th>Total</th>
+              
+              <th>Costo envío</th>
+              
+              <th colspan="2">Total con envío</th>
+            </tr>
+          </thead>
+          <tbody id="tablaEnvio"> </tbody>
+        </table>
+      </div>
+      <div class="col-3"></div>
+      </div>
+      <br>
+     
 
-        <br>
-<div>
-        <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#modalPagar">Continuar
+      <br>
+      <div class="row">
+      <div class="col-3"></div>
+      <div class="col-2" >
+        <div class="contenedorDatos">
+        <input type="text" name="calle" style="width: auto;;" id="calle" class="form-control" placeholder="Calle"><br>
+
+        <input type="number" name="numPuerta" style="width: auto;"  id="numPuerta" class="form-control" placeholder="Nº de puerta"><br>
+
+        <input type="text" name="esq" id="esq" style="width: auto;"  class="form-control" placeholder="Esquina"><br>
+
+        <input type="text" name="" id="pais" style="width: auto;"  class="form-control" placeholder="País"><br>
+
+        <button class="btn btn-block btn-secondary" data-toggle="modal" id="botonDatitos" style="width: auto;" class="form-control" data-target="#modalPagar">Continuar
           compra</button>
-        <br><br>
-      </div>
-      
-      </div>
+        </div>
 
+
+      </div>
+      <div class="col-5"></div>
     </div>
+
+
+
+    
   </main>
 
 
@@ -143,45 +192,53 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Ingrese sus datos</h5>
+          <h5 class="modal-title">Seleccione un método de pago</h5>
         </div>
         <div class="modal-body">
-          <form id="needs-validation" novalidate>
+          <form id="needs-validation"  novalidate>
             <div>
-              <h4>Datos del socio:</h4>
-              <input type="text" class="form-control" placeholder="Nombre"><br>
-              <input type="text" class="form-control" placeholder="Apellido"><br>
-            </div>
-            <div>
-              <h4>Datos para el envío:</h4>
-              <label for="depto">Departamento</label><br>
-              <select class="form-control" id="depto">
-                <option>Montevideo</option>
-                <option>Artigas</option>
-                <option>Canelones</option>
-                <option>Cerro Largo</option>
-                <option>Colonia</option>
-                <option>Durazno</option>
-                <option>Flores</option>
-                <option>Florida</option>
-                <option>Lavalleja</option>
-                <option>Maldonado</option>
-                <option>Paysandú</option>
-                <option>Río Negro</option>
-                <option>Rivera</option>
-                <option>Rocha</option>
-                <option>Salto</option>
-                <option>San José</option>
-                <option>Soriano</option>
-                <option>Tacuarembó</option>
-                <option>Treinta y Tres</option>
-              </select><br>
-              <input type="text" class="form-control" placeholder="Dirección"> <br>
+              <input type="radio"  value="1" name="botonMetodoPago" id="credito" onchange="metodoPago()">
+              <label for="">Tarjeta de crédito</label><br>
+              
+              <input type="radio" value="2" name="botonMetodoPago" id="transferencia" onchange="metodoPago()" checked>
+              <label for="">Transferencia bancaria</label>
+              
+              
             </div>
 
+            <!----------------------------------------- DIV TARJETA CRED ------------------------------------------>
+            <div id="divCredito" > 
+              <br><input type="text" name="" id="nombre" class="form-control" placeholder="Nombre del titular"><br>
+              
+              <input type="number" name="" id="numTarjeta" class="form-control" placeholder="Nº de tarjeta"> <br>
+
+              <input type="number" name="" id="codigo" class="form-control" placeholder="CVC"><br>
+            </div>
+
+            <!------------------------------------------- DIV TRANSFERENCIA BANCO -------------------------------------------->
+            <div id="divBanco" >
+              <label for="">Seleccione el tipo de cuenta:</label><br>
+              <select class="form-control" id="depto">
+                <option>Cuenta corriente</option>
+                <option>Caja de ahorros</option>
+              </select><br>
+              
+              <input type="text" name=""  id="numBanco" class="form-control" placeholder="Nº de cuenta bancaria">
+
+            </div>
+
+            <div class="alert alert-success" role="alert" id="exito" style="display: none;">
+              <strong>Compra realizada con éxito!</strong> Vuelve pronto.
+            </div>
+
+            <div class="alert alert-danger" role="alert" id="fracaso" style="display: none;">
+              <strong>Debes completar todos los campos!</strong> 
+            </div>
+
+
             <div class="modal-footer">
-              <button type="submit" class="btn btn-block btn-success">Confirmar compra</button>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-block btn-success" id="botonConfirmar">Confirmar compra</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
             </div>
 
           </form>
