@@ -12,7 +12,7 @@
 
   <!--Link bootstrap menu desplegable-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  
+
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
@@ -44,30 +44,49 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      
+
       <div class="dropdown" id="contain" style="display: none">
-        <button class="btn btn-info dropdown-toggle " type="button" id="nameUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+        <button class="btn btn-info dropdown-toggle " type="button" id="nameUser" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"></button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="cart.html">Mi carrito</a>
           <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
           <a class="dropdown-item" id="salir" href="#">Salir</a>
         </div>
-    </div>
+      </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
-  <footer class="text-muted bg-light">
+
+
+
+  <main role="main" class="pb-5">
+
     <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      <div class="row p-5">
+        <div class="col-4"></div>
+        <div class=" p-5 col-4 card">
+          <img  src="" alt="" id="foto" style="width: 50%;"><br>
+          <input type="text" name="" id="inputFoto" class="form-control" placeholder="Foto de perfil">
+          <label for=""><small>*Proporcione un link para acceder a su foto de perfil</small></label>
+          <input type="text" name="" id="nombrecito" class="form-control" placeholder="Nombres" required><br>
+          <input type="text" name="" id="apellidito" class="form-control" placeholder="Apellidos" required><br>
+          <input type="number" name="" id="eda" class="form-control" placeholder="Edad" required><br>
+          <input type="email" name="" id="correo" class="form-control" placeholder="E-mail" required><br>
+          <input type="number" name="" id="tel" class="form-control" placeholder="Teléfono de contacto" required><br>
+          <button type="submit" name="" id="botonPerfil" class=" btn-secondary form-control">Guardar</button>
+        </div>
+        <div class="col-4"></div>
+
+      </div>
+
+
+
     </div>
+  </main>
+
+
+
+
   </footer>
   <div class="alert fade alert-success" role="alert" id="alertResult">
     <span id="resultSpan"></span>

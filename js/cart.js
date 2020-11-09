@@ -35,6 +35,7 @@ function subCost(unitCost, i) {
     document.getElementById(`sumaSub${i}`).innerHTML = subTot;
 
     totalCost();
+    costoEnvio();
 
 }
 
@@ -185,9 +186,6 @@ botonModal.addEventListener("click", function (e) {
 
         }
     }
-
-    
-
     
     } if
         (validacion) {

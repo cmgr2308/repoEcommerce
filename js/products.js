@@ -43,22 +43,27 @@ function showProductsList(array) {
 
             if (buscar == undefined || product.name.toLowerCase().indexOf(buscar) != -1) {
 
-                htmlContentToAppend += `
-          <a href="product-info.html" class="list-group-item list-group-item-action">
-              <div class="row">
-                  <div class="col-3">
-                      <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
-                  </div>
-                  <div class="col">
-                      <div class="d-flex w-100 justify-content-between">
-                          <h4 class="mb-1">`+ product.name + ` - USD ` + product.cost + `</h4>
-                          <small class="text-muted">` + ` ` + product.soldCount + ` vendidos  </small>
-                      </div>
-                      <p class="mb-1">` + product.description + `</p>
-                  </div>
-              </div>
-          </a>
-          `
+                htmlContentToAppend += 
+               
+         `
+         <div class="col-sm-6">
+         <a href="product-info.html" class="list-group-item list-group-item-action">
+             <div class="row">
+                 <div class="col-3">
+                     <img src="` +product.imgSrc +`" alt="` + product.name +`" class="img-thumbnail">
+                 </div>
+                 <div class="col">
+                     <div class="d-flex w-100 justify-content-between">
+                         <h4 class="mb-1">` + product.name + " U$S " + product.cost +`</h4>
+                     </div>
+                     <p class="mb-1">` + product.description +`</p>
+           <small class="text-muted">` + "" + product.soldCount + ` vendidos</small>
+                </div>
+                 
+             </div>
+         </a>
+         </div>
+         `
                 document.getElementById("listaProductos").innerHTML = htmlContentToAppend;
             }
         }
@@ -153,13 +158,13 @@ document.getElementById("filtro").addEventListener("click", function () {
 
 //evento input para el buscador
 
-document.getElementById("search").addEventListener("input", function() {
+document.getElementById("search").addEventListener("input", function () {
     buscar = document.getElementById("search").value.toLowerCase();
 
     showProductsList(categoriesArray);
 });
 
-document.getElementById("limpiaSearch").addEventListener("click", function() {
+document.getElementById("limpiaSearch").addEventListener("click", function () {
     document.getElementById("search").value = "";
 
     buscar = undefined;
